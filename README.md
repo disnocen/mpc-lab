@@ -10,5 +10,5 @@
 
 ## NIOT
 
-* Non interactive (NI) 1-of-2  oblivious transfer (OT) in file `ot.py` is based on [Bellare-Micali paper](https://cseweb.ucsd.edu/~mihir/papers/niot.pdf)
-* 1-of-n oblivious transfer is the generalization of 1-of-2 OT as expressed in the [Stanford page on OT](https://crypto.stanford.edu/pbc/notes/crypto/ot.html)(<>)
+* Non interactive (NI) 1-of-2  oblivious transfer (OT) in file `ot.py` is based on [Bellare-Micali paper](./papers/bellare89-ot.pdf)
+* The extension to 1-of-n is implemented based on the [paper by Ishai et al](./papers/ishai03-extending-OT.pdf)
