@@ -5,7 +5,7 @@ import random
 # 0. boilerplate
 debug = False
 # print if debug is true
-def debug_print(string):
+def debug_print(string, debug=debug):
     """
     print if debug is true
     """
@@ -15,7 +15,7 @@ def debug_print(string):
 # create a random number
 def rand(num):
     """
-    create a random number
+    create a random number from 0 to  num
     :warning: this is not cryptographically secure; use os.urandom instead
     """
     debug_print("rand num base: " + str(num))
