@@ -60,12 +60,14 @@ def string_to_bin(string):
     """
     :param string: string
     :return: binary string
-    :example: string_to_bin('abc') = '011000010110001001100011'
+    :example: string_to_bin('abc') = '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011000010110001001100011'
     """
     debug_print("string to bin: " + string)
 
     # encode the string to binary
     binary = ''.join(format(ord(i), '08b') for i in string)
+    # pad the binary string to 128 bits
+    binary = binary.zfill(128)
 
     return binary
 
@@ -76,10 +78,15 @@ def bin_to_string(binary):
     """
     :param binary: binary string
     :return: string
-    :example: bin_to_string('011000010110001001100011') = 'abc' see string_to_bin
+    :example: bin_to_string('00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011000010110001001100011') = 'abc' see string_to_bin for more info
     """
     debug_print("bin to string: " + binary)
-    return ''.join(chr(int(binary[i*8:i*8+8], 2)) for i in range(len(binary)//8))
+
+    ss =  ''.join(chr(int(binary[i*8:i*8+8], 2)) for i in range(len(binary)//8))
+    
+    # discard the padding
+    ss = ss.lstrip('\x00')
+    return ss
 
 # return xor of two binary strings
 def xor(a, b):
