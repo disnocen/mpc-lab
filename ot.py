@@ -118,7 +118,8 @@ def xor(a, b):
 # create a 128 bit prime number
 num = 2**128 - 2**97 - 1
 gen = 2
-C = rand(num-1)
+C = rand(num-1) # theoretically a number whose discrete log is unknown; but insecure right now
+# TODO: make this secure
 
 
 # 2. create keys for bob

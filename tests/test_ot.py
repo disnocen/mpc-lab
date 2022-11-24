@@ -1,12 +1,14 @@
 # this test is for the ot module
 
 import pytest
-# from ... import ot
 import ot
 
 # test it with pytest
 # $ python3 -m pytest tests/
 
+def is_num_128_bit():
+    a = ot.num
+    assert a.bit_length() == 128
 def test_length_num_to_bin():
     a = 1
     assert len(ot.num_to_bin(a)) == 128
