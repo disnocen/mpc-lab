@@ -1,10 +1,11 @@
 # this test is for the ot module
 
 import pytest
+# from ... import ot
 import ot
 
 # test it with pytest
-# $ pytest -q test_ot.py
+# $ python3 -m pytest tests/
 
 def test_length_num_to_bin():
     a = 1
