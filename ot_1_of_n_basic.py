@@ -49,7 +49,7 @@ def get_string_from_bob_choice(strings, bob_choice):
 if __name__ == "__main__":
     # alice has a list of 10000 strings
     alice_strings = [str(i) for i in range(10000)]
-    bob_choice = 934 #i.e. 'am'
+    bob_choice = 934 
 
     m = len(alice_strings)
 
@@ -100,3 +100,4 @@ if __name__ == "__main__":
     bob_string = get_string_from_bob_choice(Strings, bob_choice)
     debug_print("Bob's string: " + bin_to_string(bob_string), debug=debug)
     print("Bob's string: " + bin_to_string(bob_string))
+    assert bin_to_string(bob_string) == str(bob_choice)
